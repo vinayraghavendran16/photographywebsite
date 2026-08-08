@@ -103,23 +103,28 @@
   .section-title em{font-style:italic; color:var(--brass);}
   .section-note{max-width:280px; font-size:13px; color:var(--ink-soft); line-height:1.6;}
 
-  .genres{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line);}
-  .genre-card{
-    background:var(--ivory); padding:44px 32px; min-height:340px; position:relative; overflow:hidden;
-    transition:background .4s ease;
+  .genre-section{
+    display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:stretch; scroll-margin-top:90px;
   }
-  .genre-card:hover{background:var(--ivory-deep);}
-  .genre-num{font-size:11px; letter-spacing:.14em; color:var(--brass); text-transform:uppercase;}
-  .genre-name{font-family:'Fraunces', serif; font-size:28px; font-weight:450; margin-top:70px;}
-  .genre-desc{font-size:13px; color:var(--ink-soft); margin-top:14px; line-height:1.6; max-width:220px;}
-  .genre-swatch{
-    position:absolute; right:-30px; bottom:-30px; width:150px; height:150px; border-radius:50%;
-    opacity:.5; filter:blur(2px);
+  .genre-section + .genre-section{border-top:1px solid var(--line);}
+  .genre-section.reverse{direction:rtl;}
+  .genre-section.reverse > *{direction:ltr;}
+  .genre-content{
+    padding:100px 56px; display:flex; flex-direction:column; justify-content:center; position:relative;
   }
-  .genre-link{position:relative; z-index:2; display:inline-block; margin-top:22px; font-size:12px; letter-spacing:.08em; color:var(--brass); text-decoration:none; border-bottom:1px solid var(--brass); padding-bottom:3px;}
-  .g1 .genre-swatch{background:radial-gradient(circle,#C6A69A,transparent 70%);}
-  .g2 .genre-swatch{background:radial-gradient(circle,#B9A986,transparent 70%);}
-  .g3 .genre-swatch{background:radial-gradient(circle,#8E6E33,transparent 70%);}
+  .genre-content .genre-num{font-size:11px; letter-spacing:.16em; color:var(--brass); text-transform:uppercase; margin-bottom:22px;}
+  .genre-content .genre-name{font-family:'Fraunces',serif; font-size:clamp(40px,4.2vw,60px); font-weight:300; line-height:1.05; margin-bottom:20px;}
+  .genre-content .genre-name em{font-style:italic; color:var(--brass);}
+  .genre-content .genre-desc{font-size:15px; color:var(--ink-soft); line-height:1.7; max-width:440px; margin-bottom:18px;}
+  .genre-content .genre-list{list-style:none; margin:8px 0 32px; font-size:13px; color:var(--ink-soft); line-height:2;}
+  .genre-content .genre-list li::before{content:"— "; color:var(--brass);}
+  .genre-content .genre-cta{align-self:flex-start; border-bottom:1px solid var(--ink); padding-bottom:4px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; color:var(--ink);}
+  .genre-photo{
+    position:relative; min-height:560px; overflow:hidden;
+  }
+  .genre-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .genre-photo::after{content:attr(data-tag); position:absolute; bottom:24px; left:28px; color:#F4EFE4; font-size:11px; letter-spacing:.16em; text-transform:uppercase; z-index:2;}
+  .genre-photo::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(20,17,14,.55) 100%); z-index:1;}
 
   .gallery{
     display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:120px; gap:12px;
@@ -213,6 +218,12 @@
     .packages{grid-template-columns:1fr;}
     .insta-grid{grid-template-columns:repeat(3,1fr);}
     .contact{grid-template-columns:1fr; gap:40px; padding:80px 24px;}
+    .genre-section{grid-template-columns:1fr; scroll-margin-top:80px;}
+    .genre-section.reverse{direction:ltr;}
+    .genre-section .genre-photo{min-height:380px; order:1;}
+    .genre-section .genre-content{padding:56px 24px; order:2;}
+    .genre-section.reverse .genre-photo{order:1;}
+    .genre-section.reverse .genre-content{order:2;}
   }
 </style>
 </head>
@@ -258,35 +269,63 @@
   </div>
 </div>
 
-<section class="genres-section">
+<section class="genres-section" style="padding-bottom:0;">
   <div class="section-head">
     <h2 class="section-title">What we <em>shoot</em></h2>
     <p class="section-note">Three disciplines, one eye — every frame edited by hand, never templated.</p>
   </div>
-  <div class="genres">
-    <div class="genre-card g1" id="weddings">
-      <div class="genre-num">01 — Weddings</div>
-      <div class="genre-name">Candid<br>Weddings</div>
-      <div class="genre-desc">Documentary coverage across the mehendi, the mandap, the 2am dance floor.</div>
-      <div class="genre-swatch"></div>
-      <a class="genre-link" href="#gallery">See wedding work →</a>
-    </div>
-    <div class="genre-card g2" id="pets">
-      <div class="genre-num">02 — Pets</div>
-      <div class="genre-name">Pet<br>Portraits</div>
-      <div class="genre-desc">At-home sessions built around a good treat and a lot of patience.</div>
-      <div class="genre-swatch"></div>
-      <a class="genre-link" href="#gallery">See pet work →</a>
-    </div>
-    <div class="genre-card g3" id="events">
-      <div class="genre-num">03 — Events</div>
-      <div class="genre-name">Events &amp;<br>Launches</div>
-      <div class="genre-desc">Corporate offsites, brand launches, and everything with a guest list.</div>
-      <div class="genre-swatch"></div>
-      <a class="genre-link" href="#gallery">See event work →</a>
-    </div>
-  </div>
 </section>
+
+<div class="genre-section" id="weddings">
+  <div class="genre-photo" data-tag="Wedding — Bengaluru">
+    <img src="https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Candid Indian wedding">
+  </div>
+  <div class="genre-content">
+    <div class="genre-num">01 — Weddings</div>
+    <div class="genre-name">Candid<br>Weddings</div>
+    <p class="genre-desc">Documentary coverage across the mehendi, the mandap, the 2am dance floor. We show up early, stay quiet, and photograph the day as it actually unfolds.</p>
+    <ul class="genre-list">
+      <li>Full-day and multi-day coverage</li>
+      <li>Two-photographer teams available</li>
+      <li>Films &amp; edited highlight reels on request</li>
+    </ul>
+    <a class="genre-cta" href="#gallery">See wedding work →</a>
+  </div>
+</div>
+
+<div class="genre-section reverse" id="pets">
+  <div class="genre-photo" data-tag="Pet — Chennai">
+    <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Pet portrait">
+  </div>
+  <div class="genre-content">
+    <div class="genre-num">02 — Pets</div>
+    <div class="genre-name">Pet<br>Portraits</div>
+    <p class="genre-desc">At-home sessions built around a good treat and a lot of patience. We photograph them on their turf, on their schedule, and we won't rush a single frame.</p>
+    <ul class="genre-list">
+      <li>90-minute at-home shoots</li>
+      <li>Dogs, cats, birds, everything in between</li>
+      <li>Fine-art print options for framing</li>
+    </ul>
+    <a class="genre-cta" href="#gallery">See pet work →</a>
+  </div>
+</div>
+
+<div class="genre-section" id="events">
+  <div class="genre-photo" data-tag="Event — Mumbai">
+    <img src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Event photography">
+  </div>
+  <div class="genre-content">
+    <div class="genre-num">03 — Events</div>
+    <div class="genre-name">Events &amp;<br>Launches</div>
+    <p class="genre-desc">Corporate offsites, brand launches, and everything with a guest list. Same documentary eye, tuned to the moments that actually matter for your brand.</p>
+    <ul class="genre-list">
+      <li>Same-week highlight edits</li>
+      <li>On-site backup gear &amp; second shooter</li>
+      <li>Usage rights included in every package</li>
+    </ul>
+    <a class="genre-cta" href="#gallery">See event work →</a>
+  </div>
+</div>
 
 <section class="gallery-section" id="gallery">
   <div class="section-head">
@@ -348,7 +387,7 @@
         <li>One pet, one location</li>
         <li>Delivery in 7 days</li>
       </ul>
-      <a class="pkg-cta" href="#">Enquire</a>
+      <a class="pkg-cta" href="#contact">Enquire</a>
     </div>
     <div class="pkg featured">
       <div class="pkg-name">Candid Wedding</div>
@@ -359,7 +398,7 @@
         <li>500+ edited images</li>
         <li>Online gallery + prints add-on</li>
       </ul>
-      <a class="pkg-cta" href="#">Enquire</a>
+      <a class="pkg-cta" href="#contact">Enquire</a>
     </div>
     <div class="pkg">
       <div class="pkg-name">Events &amp; Launches</div>
@@ -370,7 +409,7 @@
         <li>Same-week highlight set</li>
         <li>On-site backup gear</li>
       </ul>
-      <a class="pkg-cta" href="#">Enquire</a>
+      <a class="pkg-cta" href="#contact">Enquire</a>
     </div>
   </div>
 </section>
@@ -383,7 +422,7 @@
 <section class="insta">
   <div class="insta-head">
     <h3>Follow along</h3>
-    <a href="#">@ilaastudio on Instagram</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener">@ilaastudio on Instagram</a>
   </div>
   <div class="insta-grid">
     <div class="ph" data-tag=""><img src="https://images.unsplash.com/photo-1621801306185-8c0ccf9c8eb8?w=500&h=500&fit=crop&auto=format&q=80" alt=""></div>
@@ -396,19 +435,19 @@
 </section>
 
 <section class="contact" id="contact">
-  <form class="contact-form">
+  <form class="contact-form" onsubmit="event.preventDefault(); const n=this.querySelector('input[name=name]').value; const c=this.querySelector('input[name=city]').value; const t=this.querySelector('select[name=type]').value; const m=this.querySelector('textarea[name=msg]').value; window.location.href='mailto:hello@ilaastudio.in?subject='+encodeURIComponent('Enquiry from '+n+' — '+t)+'&body='+encodeURIComponent('Name: '+n+'\nCity: '+c+'\nShoot: '+t+'\n\n'+m);">
     <label>Get in touch</label>
     <h2 class="section-title" style="margin-bottom:8px;">Let's talk <em>dates</em></h2>
-    <input type="text" placeholder="Your name">
-    <input type="text" placeholder="City — Bengaluru / Chennai / Mumbai">
-    <select>
-      <option>What are we shooting?</option>
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="text" name="city" placeholder="City — Bengaluru / Chennai / Mumbai" required>
+    <select name="type" required>
+      <option value="">What are we shooting?</option>
       <option>Wedding</option>
       <option>Pet portrait</option>
       <option>Event</option>
     </select>
-    <textarea rows="4" placeholder="A little about the day..."></textarea>
-    <button type="button" class="contact-submit">Send enquiry</button>
+    <textarea name="msg" rows="4" placeholder="A little about the day..."></textarea>
+    <button type="submit" class="contact-submit">Send enquiry</button>
   </form>
   <div class="contact-info">
     <div>
@@ -431,9 +470,9 @@
 <footer>
   <div class="foot-cta">Have a date, a dog,<br>or a launch coming up? <em>Let's talk.</em></div>
   <div class="foot-links">
-    <a href="#">Instagram</a>
-    <a href="#">Enquire</a>
-    <a href="#">hello@ilaastudio.in</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    <a href="#contact">Enquire</a>
+    <a href="mailto:hello@ilaastudio.in">hello@ilaastudio.in</a>
   </div>
 </footer>
 
