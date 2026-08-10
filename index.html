@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Honest Frame — Candid photography, Bengaluru · Chennai · Mumbai</title>
+<title>The Honest Frame · Candid photography, Bengaluru · Chennai · Mumbai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -93,7 +93,7 @@
   .cities{
     display:flex; gap:22px; margin-top:44px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);
   }
-  .cities span::before{content:"— "; color:var(--brass);}
+  .cities span::before{content:"· "; color:var(--brass);}
 
   section{padding:120px 56px; scroll-margin-top:100px;}
   .section-head{
@@ -117,7 +117,7 @@
   .genre-content .genre-name em{font-style:italic; color:var(--brass);}
   .genre-content .genre-desc{font-size:15px; color:var(--ink-soft); line-height:1.7; max-width:440px; margin-bottom:18px;}
   .genre-content .genre-list{list-style:none; margin:8px 0 32px; font-size:13px; color:var(--ink-soft); line-height:2;}
-  .genre-content .genre-list li::before{content:"— "; color:var(--brass);}
+  .genre-content .genre-list li::before{content:"· "; color:var(--brass);}
   .genre-content .genre-cta{align-self:flex-start; border-bottom:1px solid var(--ink); padding-bottom:4px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; color:var(--ink);}
   .genre-photo{
     position:relative; min-height:560px; overflow:hidden;
@@ -169,7 +169,13 @@
   .pkg.featured .pkg-price span{color:#B8AFA1;}
   .pkg-list{margin-top:26px; list-style:none; font-size:13px; line-height:2.1; color:var(--ink-soft); flex:1;}
   .pkg.featured .pkg-list{color:#D8D2C4;}
-  .pkg-list li::before{content:"— "; color:var(--brass);}
+  .pkg-list li::before{content:"· "; color:var(--brass);}
+  .pkg-upgrade{margin-top:22px; padding-top:22px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-soft); line-height:1.6;}
+  .pkg.featured .pkg-upgrade{border-color:rgba(242,236,225,.16); color:#D8D2C4;}
+  .pkg-upgrade strong{display:block; font-family:'Fraunces',serif; font-weight:400; font-size:22px; color:var(--ink); margin-bottom:4px; font-style:italic;}
+  .pkg.featured .pkg-upgrade strong{color:var(--ivory);}
+  .pkg-upgrade em{font-style:normal; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); display:block; margin-bottom:6px;}
+  .pkg.featured .pkg-upgrade em{color:#D8C08A;}
   .pkg-cta{margin-top:28px; align-self:flex-start; border-bottom:1px solid var(--ink); padding-bottom:4px; text-decoration:none; color:var(--ink); font-size:12px; letter-spacing:.1em; text-transform:uppercase;}
   .pkg.featured .pkg-cta{color:var(--ivory); border-color:var(--ivory);}
 
@@ -245,7 +251,7 @@
     <div class="hero-eyebrow-top">Candid photography · Est. Bengaluru</div>
     <h1>Moments,<br>held <em>quietly</em>.</h1>
     <div class="hero-sub">
-      <p class="hero-desc">We photograph weddings, pets and events the way they actually happened — unposed, unhurried, and a little in love with the ordinary parts too.</p>
+      <p class="hero-desc">We photograph the moments you didn't pose for. Real laughter, quiet tears, the pause before a first look. Weddings, pets and events, seen honestly.</p>
       <div class="hero-cta-row">
         <a class="cta" href="#gallery">View the work</a>
         <a href="#contact" style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brass); padding-bottom:4px;">Enquire</a>
@@ -272,18 +278,18 @@
 <section class="genres-section" style="padding-bottom:0;">
   <div class="section-head">
     <h2 class="section-title">What we <em>shoot</em></h2>
-    <p class="section-note">Three disciplines, one eye — every frame edited by hand, never templated.</p>
+    <p class="section-note">Three disciplines, one instinct. Watch closely, wait for the real moment, press the shutter once.</p>
   </div>
 </section>
 
 <div class="genre-section" id="weddings">
-  <div class="genre-photo" data-tag="Wedding — Bengaluru">
+  <div class="genre-photo" data-tag="Wedding · Bengaluru">
     <img src="https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Candid Indian wedding">
   </div>
   <div class="genre-content">
-    <div class="genre-num">01 — Weddings</div>
+    <div class="genre-num">01 · Weddings</div>
     <div class="genre-name">Candid<br>Weddings</div>
-    <p class="genre-desc">Documentary coverage across the mehendi, the mandap, the 2am dance floor. We show up early, stay quiet, and photograph the day as it actually unfolds.</p>
+    <p class="genre-desc">Documentary coverage across the mehendi, the mandap, the 2am dance floor. We stay out of the way and photograph the moments you're too busy living to notice.</p>
     <ul class="genre-list">
       <li>Full-day and multi-day coverage</li>
       <li>Two-photographer teams available</li>
@@ -294,13 +300,13 @@
 </div>
 
 <div class="genre-section reverse" id="pets">
-  <div class="genre-photo" data-tag="Pet — Chennai">
+  <div class="genre-photo" data-tag="Pet · Chennai">
     <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Pet portrait">
   </div>
   <div class="genre-content">
-    <div class="genre-num">02 — Pets</div>
+    <div class="genre-num">02 · Pets</div>
     <div class="genre-name">Pet<br>Portraits</div>
-    <p class="genre-desc">At-home sessions built around a good treat and a lot of patience. We photograph them on their turf, on their schedule, and we won't rush a single frame.</p>
+    <p class="genre-desc">Pets don't pose. That's the point. We come home, wait for the real personality to show up, and photograph the moments that actually feel like them.</p>
     <ul class="genre-list">
       <li>90-minute at-home shoots</li>
       <li>Dogs, cats, birds, everything in between</li>
@@ -311,13 +317,13 @@
 </div>
 
 <div class="genre-section" id="events">
-  <div class="genre-photo" data-tag="Event — Mumbai">
+  <div class="genre-photo" data-tag="Event · Mumbai">
     <img src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Event photography">
   </div>
   <div class="genre-content">
-    <div class="genre-num">03 — Events</div>
+    <div class="genre-num">03 · Events</div>
     <div class="genre-name">Events &amp;<br>Launches</div>
-    <p class="genre-desc">Corporate offsites, brand launches, and everything with a guest list. Same documentary eye, tuned to the moments that actually matter for your brand.</p>
+    <p class="genre-desc">Corporate offsites, brand launches, everything with a guest list. Same instinct. Skip the staged handshake, catch the real reactions.</p>
     <ul class="genre-list">
       <li>Same-week highlight edits</li>
       <li>On-site backup gear &amp; second shooter</li>
@@ -330,29 +336,29 @@
 <section class="gallery-section" id="gallery">
   <div class="section-head">
     <h2 class="section-title">Recent <em>frames</em></h2>
-    <p class="section-note">A working wall, updated every month — not a curated best-of.</p>
+    <p class="section-note">A working wall, updated every month. Not a curated best-of.</p>
   </div>
   <div class="gallery">
-    <div class="ph p1" data-tag="Wedding — Mumbai"><img src="https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?w=800&h=1120&fit=crop&auto=format&q=80" alt=""></div>
-    <div class="ph rose p2" data-tag="Pet — Chennai"><img src="https://images.unsplash.com/photo-1498100152307-ce63fd6c5424?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
-    <div class="ph olive p3" data-tag="Event — Bengaluru"><img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=800&h=1120&fit=crop&auto=format&q=80" alt=""></div>
-    <div class="ph p4" data-tag="Wedding — Chennai"><img src="https://images.unsplash.com/photo-1727430256509-0f897d6f4765?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
-    <div class="ph rose p5" data-tag="Pet — Bengaluru"><img src="https://images.unsplash.com/photo-1604165094771-7af34f7fd4cd?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
-    <div class="ph olive p6" data-tag="Wedding — Mumbai"><img src="https://images.unsplash.com/photo-1611106211090-8f3c79eb8552?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
-    <div class="ph p7" data-tag="Event — Chennai"><img src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
+    <div class="ph p1" data-tag="Wedding · Mumbai"><img src="https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?w=800&h=1120&fit=crop&auto=format&q=80" alt=""></div>
+    <div class="ph rose p2" data-tag="Pet · Chennai"><img src="https://images.unsplash.com/photo-1498100152307-ce63fd6c5424?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
+    <div class="ph olive p3" data-tag="Event · Bengaluru"><img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=800&h=1120&fit=crop&auto=format&q=80" alt=""></div>
+    <div class="ph p4" data-tag="Wedding · Chennai"><img src="https://images.unsplash.com/photo-1727430256509-0f897d6f4765?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
+    <div class="ph rose p5" data-tag="Pet · Bengaluru"><img src="https://images.unsplash.com/photo-1604165094771-7af34f7fd4cd?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
+    <div class="ph olive p6" data-tag="Wedding · Mumbai"><img src="https://images.unsplash.com/photo-1611106211090-8f3c79eb8552?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
+    <div class="ph p7" data-tag="Event · Chennai"><img src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?w=800&h=480&fit=crop&auto=format&q=80" alt=""></div>
   </div>
 </section>
 
 <section class="process">
   <div class="section-head">
     <h2 class="section-title">How it <em>works</em></h2>
-    <p class="section-note">Four steps, from first message to framed prints — no surprises in between.</p>
+    <p class="section-note">Four steps, from first message to framed prints. No surprises in between.</p>
   </div>
   <div class="steps">
     <div class="step">
       <div class="step-dot">01</div>
       <div class="step-title">Enquire</div>
-      <div class="step-desc">Tell us the date, the city and what you're shooting — we reply within a day.</div>
+      <div class="step-desc">Tell us the date, the city and what you're shooting. We reply within a day.</div>
     </div>
     <div class="step">
       <div class="step-dot">02</div>
@@ -367,7 +373,7 @@
     <div class="step">
       <div class="step-dot">04</div>
       <div class="step-title">Deliver</div>
-      <div class="step-desc">Edited gallery in 2–3 weeks, with prints and albums available on request.</div>
+      <div class="step-desc">Edited gallery in two to three weeks, with prints and albums available on request.</div>
     </div>
   </div>
 </section>
@@ -375,48 +381,63 @@
 <section class="packages-section">
   <div class="section-head">
     <h2 class="section-title">Packages &amp; <em>pricing</em></h2>
-    <p class="section-note">Starting prices for Bengaluru, Chennai and Mumbai — final quote depends on hours and deliverables.</p>
+    <p class="section-note">Starting prices for Bengaluru, Chennai and Mumbai. Final quote depends on hours and deliverables.</p>
   </div>
   <div class="packages">
     <div class="pkg">
       <div class="pkg-name">Pet Portraits</div>
-      <div class="pkg-price">₹8,500 <span>/ session</span></div>
+      <div class="pkg-price">₹12,500 <span>/ session</span></div>
       <ul class="pkg-list">
-        <li>90-minute at-home session</li>
+        <li>At-home session</li>
         <li>40+ edited digital images</li>
         <li>One pet, one location</li>
         <li>Delivery in 7 days</li>
       </ul>
+      <div class="pkg-upgrade">
+        <em>Add a story film</em>
+        <strong>₹22,500</strong>
+        At-home + outdoor shoot with edited video
+      </div>
       <a class="pkg-cta" href="#contact">Enquire</a>
     </div>
     <div class="pkg featured">
       <div class="pkg-name">Candid Wedding</div>
-      <div class="pkg-price">₹65,000 <span>/ day</span></div>
+      <div class="pkg-price">₹90,000 <span>/ day</span></div>
       <ul class="pkg-list">
         <li>Full-day documentary coverage</li>
         <li>Two photographers</li>
         <li>500+ edited images</li>
         <li>Online gallery + prints add-on</li>
       </ul>
+      <div class="pkg-upgrade">
+        <em>Photos + film</em>
+        <strong>₹1,60,000</strong>
+        Full-day candid photos and cinematic video
+      </div>
       <a class="pkg-cta" href="#contact">Enquire</a>
     </div>
     <div class="pkg">
       <div class="pkg-name">Events &amp; Launches</div>
-      <div class="pkg-price">₹22,000 <span>/ half-day</span></div>
+      <div class="pkg-price">₹34,000 <span>/ 4 hrs</span></div>
       <ul class="pkg-list">
         <li>Up to 4 hours of coverage</li>
         <li>150+ edited images</li>
         <li>Same-week highlight set</li>
         <li>On-site backup gear</li>
       </ul>
+      <div class="pkg-upgrade">
+        <em>Photos + film</em>
+        <strong>₹59,000</strong>
+        4 hours of coverage with edited event video
+      </div>
       <a class="pkg-cta" href="#contact">Enquire</a>
     </div>
   </div>
 </section>
 
 <div class="quote">
-  <p>“They disappeared into the day. We didn't even notice the camera until we saw the photos — and then we couldn't stop looking.”</p>
-  <cite>Ananya &amp; Karthik, Wedding — Chennai</cite>
+  <p>“They disappeared into the day. We didn't even notice the camera until we saw the photos. Then we couldn't stop looking.”</p>
+  <cite>Ananya &amp; Karthik, Wedding · Chennai</cite>
 </div>
 
 <section class="insta">
@@ -435,11 +456,11 @@
 </section>
 
 <section class="contact" id="contact">
-  <form class="contact-form" onsubmit="event.preventDefault(); const n=this.querySelector('input[name=name]').value; const c=this.querySelector('input[name=city]').value; const t=this.querySelector('select[name=type]').value; const m=this.querySelector('textarea[name=msg]').value; window.location.href='mailto:hello@thehonestframe.in?subject='+encodeURIComponent('Enquiry from '+n+' — '+t)+'&body='+encodeURIComponent('Name: '+n+'\nCity: '+c+'\nShoot: '+t+'\n\n'+m);">
+  <form class="contact-form" onsubmit="event.preventDefault(); const n=this.querySelector('input[name=name]').value; const c=this.querySelector('input[name=city]').value; const t=this.querySelector('select[name=type]').value; const m=this.querySelector('textarea[name=msg]').value; window.location.href='mailto:hello@thehonestframe.in?subject='+encodeURIComponent('Enquiry from '+n+' about '+t)+'&body='+encodeURIComponent('Name: '+n+'\nCity: '+c+'\nShoot: '+t+'\n\n'+m);">
     <label>Get in touch</label>
     <h2 class="section-title" style="margin-bottom:8px;">Let's talk <em>dates</em></h2>
     <input type="text" name="name" placeholder="Your name" required>
-    <input type="text" name="city" placeholder="City — Bengaluru / Chennai / Mumbai" required>
+    <input type="text" name="city" placeholder="City (Bengaluru, Chennai or Mumbai)" required>
     <select name="type" required>
       <option value="">What are we shooting?</option>
       <option>Wedding</option>
