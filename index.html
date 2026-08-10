@@ -132,6 +132,14 @@
     opacity:0; transform:translateY(-4px); transition:opacity .3s, transform .3s;
   }
   .genre-photo:hover .view-badge{opacity:1; transform:translateY(0);}
+  .genre-photo-video{display:block;}
+  .genre-photo-video .play-icon{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;
+    width:88px; height:88px; border-radius:50%; background:rgba(20,17,14,.55); backdrop-filter:blur(8px);
+    border:2px solid rgba(242,236,225,.85); color:var(--ivory); font-size:26px; display:flex; align-items:center; justify-content:center;
+    padding-left:6px; transition:transform .3s, background .3s;
+  }
+  .genre-photo-video:hover .play-icon{transform:translate(-50%,-50%) scale(1.08); background:rgba(20,17,14,.75);}
 
   /* Lightbox */
   .lightbox{
@@ -385,10 +393,11 @@
 </div>
 
 <div class="genre-section reverse" id="podcasts">
-  <div class="genre-photo" data-tag="Podcast · Bengaluru" data-open="podcasts">
-    <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Corporate podcast recording">
-    <span class="view-badge">View gallery →</span>
-  </div>
+  <a class="genre-photo genre-photo-video" href="https://www.youtube.com/watch?v=R5dxukJTiwM&t=347s" target="_blank" rel="noopener" data-tag="Podcast · Watch on YouTube" style="text-decoration:none;">
+    <img src="https://img.youtube.com/vi/R5dxukJTiwM/maxresdefault.jpg" alt="Corporate podcast episode" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/R5dxukJTiwM/hqdefault.jpg';">
+    <span class="play-icon" aria-hidden="true">▶</span>
+    <span class="view-badge">Watch episode →</span>
+  </a>
   <div class="genre-content">
     <div class="genre-num">04 · Podcasts</div>
     <div class="genre-name">Corporate<br>Podcasts</div>
@@ -398,7 +407,7 @@
       <li>Studio or on-location shoots</li>
       <li>Full audio, video, and stills deliverables</li>
     </ul>
-    <a class="genre-cta" href="#" onclick="event.preventDefault(); openLightbox('podcasts')">See podcast work →</a>
+    <a class="genre-cta" href="https://www.youtube.com/watch?v=R5dxukJTiwM&t=347s" target="_blank" rel="noopener">Watch a recent episode →</a>
   </div>
 </div>
 
@@ -632,17 +641,6 @@
         {src:'https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Corporate offsite · Chennai'},
         {src:'https://images.unsplash.com/photo-1665960213508-48f07086d49c?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Gala · Mumbai'},
         {src:'https://images.unsplash.com/photo-1621801306185-8c0ccf9c8eb8?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Product detail'},
-      ]
-    },
-    podcasts: {
-      title: 'Corporate <em>Podcasts</em>',
-      subtitle: 'Founder interviews, brand series, internal shows',
-      photos: [
-        {src:'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&h=1400&fit=crop&auto=format&q=85', cap:'Studio · Bengaluru', tall:true},
-        {src:'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Founder series · Mumbai'},
-        {src:'https://images.unsplash.com/photo-1590602846794-92858f3a72ec?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Two-guest setup · Bengaluru'},
-        {src:'https://images.unsplash.com/photo-1615887028671-b46bff123c47?w=1200&h=900&fit=crop&auto=format&q=85', cap:'On-location · Chennai'},
-        {src:'https://images.unsplash.com/photo-1508802128064-3d2d02e50b1e?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Recording booth'},
       ]
     }
   };
