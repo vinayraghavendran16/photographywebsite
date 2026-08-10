@@ -206,7 +206,7 @@
   .step-title{font-family:'Fraunces', serif; font-size:20px; font-weight:450; margin-bottom:10px;}
   .step-desc{font-size:13px; color:var(--ink-soft); line-height:1.6; max-width:220px;}
 
-  .packages{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line);}
+  .packages{display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--line);}
   .pkg{background:var(--ivory); padding:44px 32px; display:flex; flex-direction:column;}
   .pkg.featured{background:var(--ink); color:var(--ivory);}
   .pkg-name{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--brass);}
@@ -288,6 +288,7 @@
     <a href="#weddings">Weddings</a>
     <a href="#pets">Pets</a>
     <a href="#events">Events</a>
+    <a href="#podcasts">Podcasts</a>
     <a href="#gallery">Journal</a>
     <a href="#contact">Enquire</a>
   </nav>
@@ -343,7 +344,7 @@
       <li>Two-photographer teams available</li>
       <li>Films &amp; edited highlight reels on request</li>
     </ul>
-    <a class="genre-cta" href="#gallery">See wedding work →</a>
+    <a class="genre-cta" href="#" onclick="event.preventDefault(); openLightbox('weddings')">See wedding work →</a>
   </div>
 </div>
 
@@ -361,7 +362,7 @@
       <li>Dogs, cats, birds, everything in between</li>
       <li>Fine-art print options for framing</li>
     </ul>
-    <a class="genre-cta" href="#gallery">See pet work →</a>
+    <a class="genre-cta" href="#" onclick="event.preventDefault(); openLightbox('pets')">See pet work →</a>
   </div>
 </div>
 
@@ -379,7 +380,25 @@
       <li>On-site backup gear &amp; second shooter</li>
       <li>Usage rights included in every package</li>
     </ul>
-    <a class="genre-cta" href="#gallery">See event work →</a>
+    <a class="genre-cta" href="#" onclick="event.preventDefault(); openLightbox('events')">See event work →</a>
+  </div>
+</div>
+
+<div class="genre-section reverse" id="podcasts">
+  <div class="genre-photo" data-tag="Podcast · Bengaluru" data-open="podcasts">
+    <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&h=1400&fit=crop&auto=format&q=85" alt="Corporate podcast recording">
+    <span class="view-badge">View gallery →</span>
+  </div>
+  <div class="genre-content">
+    <div class="genre-num">04 · Podcasts</div>
+    <div class="genre-name">Corporate<br>Podcasts</div>
+    <p class="genre-desc">Founder interviews, brand series, internal shows. We shoot podcasts the same way we shoot everything else. Look for the moment someone stops performing and actually starts talking.</p>
+    <ul class="genre-list">
+      <li>Single or multi-camera setups</li>
+      <li>Studio or on-location shoots</li>
+      <li>Full audio, video, and stills deliverables</li>
+    </ul>
+    <a class="genre-cta" href="#" onclick="event.preventDefault(); openLightbox('podcasts')">See podcast work →</a>
   </div>
 </div>
 
@@ -482,6 +501,22 @@
       </div>
       <a class="pkg-cta" href="#contact">Enquire</a>
     </div>
+    <div class="pkg">
+      <div class="pkg-name">Corporate Podcasts</div>
+      <div class="pkg-price">₹45,000 <span>/ episode</span></div>
+      <ul class="pkg-list">
+        <li>Up to 2 hours of recording</li>
+        <li>Single-camera setup</li>
+        <li>Edited audio + 150+ stills</li>
+        <li>Studio or on-location</li>
+      </ul>
+      <div class="pkg-upgrade">
+        <em>Multi-cam edit</em>
+        <strong>₹85,000</strong>
+        Multi-camera setup with edited video episode
+      </div>
+      <a class="pkg-cta" href="#contact">Enquire</a>
+    </div>
   </div>
 </section>
 
@@ -516,6 +551,7 @@
       <option>Wedding</option>
       <option>Pet portrait</option>
       <option>Event</option>
+      <option>Corporate podcast</option>
     </select>
     <textarea name="msg" rows="4" placeholder="A little about the day..."></textarea>
     <button type="submit" class="contact-submit">Send enquiry</button>
@@ -581,10 +617,10 @@
       title: 'Pet <em>Portraits</em>',
       subtitle: 'At-home sessions, unposed',
       photos: [
-        {src:'images/pet-03.jpg', cap:'Bruno · Bengaluru', tall:true},
-        {src:'images/pet-01.jpg', cap:'Bruno · Bengaluru'},
-        {src:'images/pet-04.jpg', cap:'Bruno · Bengaluru'},
-        {src:'images/pet-02.jpg', cap:'Bruno · Bengaluru'},
+        {src:'images/pet-03.jpg', cap:'Jimmy · Bengaluru', tall:true},
+        {src:'images/pet-01.jpg', cap:'Jimmy · Bengaluru'},
+        {src:'images/pet-04.jpg', cap:'Jimmy · Bengaluru'},
+        {src:'images/pet-02.jpg', cap:'Jimmy · Bengaluru'},
       ]
     },
     events: {
@@ -596,6 +632,17 @@
         {src:'https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Corporate offsite · Chennai'},
         {src:'https://images.unsplash.com/photo-1665960213508-48f07086d49c?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Gala · Mumbai'},
         {src:'https://images.unsplash.com/photo-1621801306185-8c0ccf9c8eb8?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Product detail'},
+      ]
+    },
+    podcasts: {
+      title: 'Corporate <em>Podcasts</em>',
+      subtitle: 'Founder interviews, brand series, internal shows',
+      photos: [
+        {src:'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&h=1400&fit=crop&auto=format&q=85', cap:'Studio · Bengaluru', tall:true},
+        {src:'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Founder series · Mumbai'},
+        {src:'https://images.unsplash.com/photo-1590602846794-92858f3a72ec?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Two-guest setup · Bengaluru'},
+        {src:'https://images.unsplash.com/photo-1615887028671-b46bff123c47?w=1200&h=900&fit=crop&auto=format&q=85', cap:'On-location · Chennai'},
+        {src:'https://images.unsplash.com/photo-1508802128064-3d2d02e50b1e?w=1200&h=900&fit=crop&auto=format&q=85', cap:'Recording booth'},
       ]
     }
   };
