@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Show up on video, every week · Founder Channel</title>
-<meta name="description" content="Two shoot days a month. A full week of video across YouTube, LinkedIn, and Shorts, ready to publish. The monthly retainer for Bangalore and Chennai founders.">
+<meta name="description" content="Two shoot days a month. A full month of video across YouTube, LinkedIn, and Shorts, ready to publish. The monthly retainer for Bangalore and Chennai founders.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -124,6 +124,27 @@
   .stat-body{font-size:13px; color:var(--ink-soft); line-height:1.55;}
   .stat-source{margin-top:16px; font-size:11px; color:var(--ink-soft); font-style:italic; letter-spacing:.02em;}
 
+  /* Goals section */
+  .goals-lede{font-size:17px; line-height:1.7; color:var(--ink-soft); max-width:720px; margin-bottom:36px;}
+  .goals-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    border:1px solid var(--line); background:var(--ivory);
+  }
+  .goal{
+    padding:38px 32px; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:var(--ivory); display:flex; flex-direction:column;
+  }
+  .goal:nth-child(3n){border-right:none;}
+  .goal:nth-last-child(-n+3){border-bottom:none;}
+  .goal-num{font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:20px; color:var(--brass); margin-bottom:20px; letter-spacing:.02em;}
+  .goal-name{font-family:'Fraunces',serif; font-weight:450; font-size:22px; margin-bottom:14px; line-height:1.15;}
+  .goal-body{font-size:14px; line-height:1.65; color:var(--ink-soft);}
+  .goal-open{background:var(--ivory-deep);}
+  .goal-open .goal-num{font-size:30px; line-height:1;}
+
+  /* How section, one-team lede */
+  .how-lede{font-size:17px; line-height:1.7; color:var(--ink-soft); max-width:720px; margin-top:8px; margin-bottom:12px;}
+
   /* Playbook section */
   .playbook-section{background:var(--ivory-deep); padding:100px 56px; border-top:1px solid var(--line);}
   .playbook-inner{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.05fr .95fr; gap:80px; align-items:center;}
@@ -177,6 +198,9 @@
     .stat-cell:first-child{padding-left:14px;}
     .stat-cell:last-child{padding-right:14px;}
     .stat-num{font-size:44px; margin-bottom:10px;}
+    .goals-grid{grid-template-columns:1fr;}
+    .goal{border-right:none; border-bottom:1px solid var(--line); padding:28px 24px;}
+    .goal:last-child{border-bottom:none;}
     .platforms{grid-template-columns:1fr;}
     .step{grid-template-columns:1fr; gap:14px; padding:28px 0;}
     .step-num{font-size:36px;}
@@ -195,6 +219,7 @@
   <div class="wordmark">Founder Channel</div>
   <nav>
     <a href="#why">Why video</a>
+    <a href="#goals">Goals</a>
     <a href="#how">How it works</a>
     <a href="#playbook">Free playbook</a>
     <a href="#pricing">Pricing</a>
@@ -209,7 +234,7 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Founder Content Retainer</div>
     <h1>Show up on video,<br><em>every week</em>.</h1>
-    <p class="hero-lede">Two shoot days a month. A full month of video across YouTube, LinkedIn, and Shorts, ready to publish.</p>
+    <p class="hero-lede">Two shoot days a month. A full month of video across YouTube, LinkedIn, and Shorts. Strategy to scheduling, all one team.</p>
     <div class="hero-cta-row">
       <a class="cta-primary" href="#contact">Get started</a>
       <a class="cta-ghost" href="#playbook">Get the free playbook →</a>
@@ -247,6 +272,44 @@
   <div class="stat-source">Sources: LinkedIn B2B India, Wyzowl, HubSpot State of Marketing 2025.</div>
 </section>
 
+<section id="goals">
+  <div class="section-eyebrow">What this actually gets you</div>
+  <h2>Not just posts on a calendar. <em>Outcomes.</em></h2>
+  <p class="goals-lede">Video is a means. Every founder we work with is running it toward something specific. Here's what the retainer usually gets pointed at.</p>
+  <div class="goals-grid">
+    <div class="goal">
+      <div class="goal-num">01</div>
+      <div class="goal-name">Brand awareness</div>
+      <div class="goal-body">Reach and recall in the buyer categories that matter to you. Not vanity views. Feed presence with the people you actually want to reach.</div>
+    </div>
+    <div class="goal">
+      <div class="goal-num">02</div>
+      <div class="goal-name">Founder authority</div>
+      <div class="goal-body">You become the face of your category. Buyers, investors, and candidates find you by name because they've been watching you think out loud for months.</div>
+    </div>
+    <div class="goal">
+      <div class="goal-num">03</div>
+      <div class="goal-name">Podcasts &amp; interview shows</div>
+      <div class="goal-body">An owned series, produced on schedule, without you running it. Founder interviews, customer teardowns, category thesis conversations.</div>
+    </div>
+    <div class="goal">
+      <div class="goal-num">04</div>
+      <div class="goal-name">Lead generation</div>
+      <div class="goal-body">Video-led landing pages, LinkedIn video that actually converts, YouTube long-form that keeps ranking on search a year after you shot it.</div>
+    </div>
+    <div class="goal">
+      <div class="goal-num">05</div>
+      <div class="goal-name">Sales &amp; GTM enablement</div>
+      <div class="goal-body">Clips your team drops into cold outbound. Long-form videos to send after demos. Reusable answers to the objections you keep hearing.</div>
+    </div>
+    <div class="goal goal-open">
+      <div class="goal-num">+</div>
+      <div class="goal-name">Or something else</div>
+      <div class="goal-body">Recruitment films, launch videos, internal all-hands, a category podcast. Tell us the goal on the intro call. We build the plan around it.</div>
+    </div>
+  </div>
+</section>
+
 <section id="platforms">
   <div class="section-eyebrow">What each platform actually does for you</div>
   <h2>Three platforms, three different jobs.</h2>
@@ -275,6 +338,7 @@
 <section id="how">
   <div class="section-eyebrow">How we run it, start to finish</div>
   <h2>Five stages, one team, one monthly rhythm.</h2>
+  <p class="how-lede">The whole thing, done by one team. From the first content strategy call to the scheduled post going live. No handoffs, no chasing four vendors for one video to go out.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">01</div>
@@ -320,8 +384,8 @@
   <div class="pricing-inner">
     <div>
       <div class="section-eyebrow">One place, one price</div>
-      <h2>Calendar, scripting, shoots, edit, and posting. <em>One invoice.</em></h2>
-      <p class="pricing-note">You don't need a separate agency for strategy, a separate editor, and a separate person managing your posting schedule. It's one relationship, one monthly cost, one team accountable for the whole thing working.</p>
+      <h2>One team, one invoice. <em>Not four vendors.</em></h2>
+      <p class="pricing-note">Most companies hire a strategist, a videographer, an editor, and a social manager to run this. Four people, four invoices, four different opinions on what to post. This is one team, one invoice, one plan you approve once a month.</p>
       <p class="pricing-fine">Studio rental, if a shoot calls for one instead of shooting on-site, is billed separately based on the space.</p>
     </div>
     <div>
