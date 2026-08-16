@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why Video, and How to Actually Run Social Media · Founder Channel</title>
-<meta name="description" content="Why founders are moving budget into video, and what it takes to actually run social media. Monthly video retainer for Bangalore and Chennai founders.">
+<title>Show up on video, every week · Founder Channel</title>
+<meta name="description" content="Two shoot days a month. A full week of video across YouTube, LinkedIn, and Shorts, ready to publish. The monthly retainer for Bangalore and Chennai founders.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -103,19 +103,26 @@
   footer .foot-links{display:flex; gap:28px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);}
   footer .foot-links a{color:var(--ink-soft); text-decoration:none;}
 
-  /* Why section, 2-col stats layout */
-  .why-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:80px; align-items:start; margin-top:8px;}
-  .stats{
-    background:var(--ivory-deep); padding:44px 40px; border:1px solid var(--line);
-    display:flex; flex-direction:column; gap:0;
+  /* Why section, prose + horizontal 4-stat strip */
+  .why-prose{max-width:820px; margin-bottom:56px;}
+  .stat-strip{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:36px 0; gap:0;
   }
-  .stats-eyebrow{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass); margin-bottom:26px; padding-bottom:18px; border-bottom:1px solid var(--line);}
-  .stat{padding:22px 0; border-bottom:1px dashed var(--line); display:grid; grid-template-columns:110px 1fr; gap:18px; align-items:baseline;}
-  .stat:last-of-type{border-bottom:none; padding-bottom:26px;}
-  .stat-num{font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:52px; color:var(--brass); line-height:1;}
+  .stat-cell{
+    padding:0 28px; display:flex; flex-direction:column; justify-content:flex-start;
+    border-right:1px solid var(--line);
+  }
+  .stat-cell:first-child{padding-left:0;}
+  .stat-cell:last-child{border-right:none; padding-right:0;}
+  .stat-num{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:64px; color:var(--brass);
+    line-height:1; margin-bottom:16px;
+  }
   .stat-num span{font-size:26px; margin-left:2px; font-style:italic;}
-  .stat-body{font-size:13px; color:var(--ink-soft); line-height:1.5;}
-  .stats-source{margin-top:8px; padding-top:20px; border-top:1px solid var(--line); font-size:11px; color:var(--ink-soft); letter-spacing:.02em; line-height:1.5; font-style:italic;}
+  .stat-body{font-size:13px; color:var(--ink-soft); line-height:1.55;}
+  .stat-source{margin-top:16px; font-size:11px; color:var(--ink-soft); font-style:italic; letter-spacing:.02em;}
 
   /* Playbook section */
   .playbook-section{background:var(--ivory-deep); padding:100px 56px; border-top:1px solid var(--line);}
@@ -162,10 +169,14 @@
     nav{display:none;}
     .hero{padding:130px 24px 60px; min-height:auto;}
     .hero-lede{font-size:16px;}
-    .why-grid{grid-template-columns:1fr; gap:40px;}
-    .stats{padding:32px 24px;}
-    .stat{grid-template-columns:80px 1fr; gap:14px;}
-    .stat-num{font-size:40px;}
+    .why-prose{margin-bottom:32px;}
+    .stat-strip{grid-template-columns:repeat(2,1fr); padding:24px 0;}
+    .stat-cell{padding:16px 14px; border-right:1px solid var(--line); border-bottom:1px solid var(--line);}
+    .stat-cell:nth-child(2n){border-right:none;}
+    .stat-cell:nth-last-child(-n+2){border-bottom:none;}
+    .stat-cell:first-child{padding-left:14px;}
+    .stat-cell:last-child{padding-right:14px;}
+    .stat-num{font-size:44px; margin-bottom:10px;}
     .platforms{grid-template-columns:1fr;}
     .step{grid-template-columns:1fr; gap:14px; padding:28px 0;}
     .step-num{font-size:36px;}
@@ -197,8 +208,8 @@
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">Founder Content Retainer</div>
-    <h1>Why founders are moving budget into <em>video</em>,<br>and what it takes to actually run <em>Social&nbsp;media</em>.</h1>
-    <p class="hero-lede">Video is how buyers, investors and candidates vet a company before the first call. This is what it takes to show up consistently, without becoming a content person.</p>
+    <h1>Show up on video,<br><em>every week</em>.</h1>
+    <p class="hero-lede">Two shoot days a month. A full month of video across YouTube, LinkedIn, and Shorts, ready to publish.</p>
     <div class="hero-cta-row">
       <a class="cta-primary" href="#contact">Get started</a>
       <a class="cta-ghost" href="#playbook">Get the free playbook →</a>
@@ -211,40 +222,29 @@
 <section id="why">
   <div class="section-eyebrow">Why corporates are going video</div>
   <h2>Video is how buyers decide whether they trust you, <em>before</em> they've spent a rupee of your time.</h2>
-  <div class="why-grid">
-    <div class="prose">
-      <p>Buyers research a company on video before they ever take a call. A founder's face on screen does something a case study PDF can't. It lets a prospect decide whether they trust you before they've spent a rupee of your time. Investors do the same thing before a first meeting. Candidates do it before applying. Video has become the default way people vet a company, not an optional extra.</p>
-      <p class="dim">The shift isn't just about visibility. It's about compounding. A blog post gets read once. A LinkedIn post scrolls past in a day. A video, cut well, keeps earning views on YouTube for years, keeps getting reshared as a Short, and keeps showing up in someone's feed months after it was shot. One good day of filming keeps working long after the invoice is paid.</p>
-    </div>
-    <aside class="stats">
-      <div class="stats-eyebrow">The India video data</div>
-      <div class="stat">
-        <div class="stat-num">83<span>%</span></div>
-        <div class="stat-body">of Indian B2B buyers trust short-form founder videos more than case studies.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">66<span>%</span></div>
-        <div class="stat-body">say video content shapes their buying decision before a first call.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">96<span>%</span></div>
-        <div class="stat-body">of B2B buyers watch video to understand a product, service, or founder.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">51<span>%</span></div>
-        <div class="stat-body">research founders on YouTube before initial meetings.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">80<span>%</span></div>
-        <div class="stat-body">lift in conversion on landing pages with video vs. text-only.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">49<span>%</span></div>
-        <div class="stat-body">faster revenue growth for GTM teams using video, year-over-year.</div>
-      </div>
-      <div class="stats-source">Sources: LinkedIn B2B India, Wyzowl, HubSpot State of Marketing 2025.</div>
-    </aside>
+  <div class="prose why-prose">
+    <p>Buyers research your company on video before they take a call. A founder's face on screen does what a case study PDF can't. Investors do the same before a first meeting. Candidates do it before applying. Video is now the default way people vet a company, not an optional extra.</p>
+    <p class="dim">The shift is about compounding. A blog post gets read once. A LinkedIn post scrolls past in a day. A video, cut well, keeps earning views for years.</p>
   </div>
+  <div class="stat-strip">
+    <div class="stat-cell">
+      <div class="stat-num">83<span>%</span></div>
+      <div class="stat-body">of Indian B2B buyers trust founder videos more than case studies.</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">96<span>%</span></div>
+      <div class="stat-body">of B2B buyers watch video to understand a product or founder.</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">80<span>%</span></div>
+      <div class="stat-body">lift in conversion on landing pages with video vs. text-only.</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">49<span>%</span></div>
+      <div class="stat-body">faster revenue growth for GTM teams using video, year-over-year.</div>
+    </div>
+  </div>
+  <div class="stat-source">Sources: LinkedIn B2B India, Wyzowl, HubSpot State of Marketing 2025.</div>
 </section>
 
 <section id="platforms">
@@ -378,11 +378,11 @@
       <div class="section-eyebrow">Get started</div>
       <h2>Book a 20-minute intro call.</h2>
       <p class="contact-desc">Tell us about your business, your channel goals, and your current content situation. If we're a fit, we'll draft a starting plan on the same call.</p>
-      <div class="contact-detail"><span>Email</span><a href="mailto:hello@founderchannel.com">hello@founderchannel.com</a></div>
+      <div class="contact-detail"><span>Email</span><a href="mailto:support@vinayraghavendran.com">support@vinayraghavendran.com</a></div>
       <div class="contact-detail"><span>Based in</span>Bengaluru &amp; Chennai</div>
     </div>
     <div class="contact-right">
-      <form class="contact-form" onsubmit="event.preventDefault(); const n=this.querySelector('input[name=name]').value; const e=this.querySelector('input[name=email]').value; const c=this.querySelector('input[name=company]').value; const m=this.querySelector('textarea[name=msg]').value; window.location.href='mailto:hello@founderchannel.com?subject='+encodeURIComponent('Founder Channel enquiry from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+e+'\nCompany: '+c+'\n\n'+m);">
+      <form class="contact-form" onsubmit="event.preventDefault(); const n=this.querySelector('input[name=name]').value; const e=this.querySelector('input[name=email]').value; const c=this.querySelector('input[name=company]').value; const m=this.querySelector('textarea[name=msg]').value; window.location.href='mailto:support@vinayraghavendran.com?subject='+encodeURIComponent('Founder Channel enquiry from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+e+'\nCompany: '+c+'\n\n'+m);">
         <label>Name</label>
         <input type="text" name="name" placeholder="Your name" required>
         <label>Work email</label>
@@ -403,7 +403,7 @@
     <a href="#why">Why video</a>
     <a href="#how">How it works</a>
     <a href="#playbook">Playbook</a>
-    <a href="mailto:hello@founderchannel.com">hello@founderchannel.com</a>
+    <a href="mailto:support@vinayraghavendran.com">support@vinayraghavendran.com</a>
   </div>
 </footer>
 
