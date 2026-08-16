@@ -161,6 +161,9 @@
   .playbook-form label{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:14px;}
   .playbook-form input{background:transparent; border:none; border-bottom:1px solid var(--line); padding:12px 2px; font-family:'Inter',sans-serif; font-size:15px; color:var(--ink); outline:none;}
   .playbook-form input:focus{border-bottom-color:var(--brass);}
+  .playbook-form input.invalid{border-bottom-color:#B24A32;}
+  .playbook-form input.invalid:focus{border-bottom-color:#B24A32;}
+  .form-error{margin-top:8px; font-size:12.5px; color:#B24A32; line-height:1.55; letter-spacing:.01em;}
   .playbook-form button{margin-top:26px; background:var(--ink); color:var(--ivory); border:none; padding:16px 30px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; font-family:'Inter',sans-serif; transition:background .2s;}
   .playbook-form button:hover{background:var(--brass);}
   .playbook-fine{margin-top:16px; font-size:11px; line-height:1.6; color:var(--ink-soft);}
@@ -418,13 +421,14 @@
       <div class="playbook-card">
         <div class="playbook-card-eyebrow">Send it to me</div>
         <div class="playbook-card-title">Get the playbook, free.</div>
-        <form id="playbook-form" class="playbook-form" onsubmit="handlePlaybookSubmit(event)">
+        <form id="playbook-form" class="playbook-form" onsubmit="handlePlaybookSubmit(event)" novalidate>
           <label>Your work email</label>
-          <input type="email" name="email" placeholder="you@company.com" required>
+          <input type="email" name="email" id="playbook-email" placeholder="you@company.com" required autocomplete="email">
+          <div class="form-error" id="playbook-email-error" role="alert" hidden></div>
           <label>Your name</label>
-          <input type="text" name="name" placeholder="First name" required>
+          <input type="text" name="name" id="playbook-name" placeholder="First name" required>
           <button type="submit">Send me the playbook</button>
-          <p class="playbook-fine">We use your email to send the playbook and, occasionally, one useful note a month. No spam, unsubscribe any time.</p>
+          <p class="playbook-fine">Work emails only. We use your email to send the playbook and, occasionally, one useful note a month. No spam, unsubscribe any time.</p>
         </form>
         <div id="playbook-success" class="playbook-success" hidden>
           <div class="playbook-success-title">On its way.</div>
@@ -480,8 +484,25 @@
   function handlePlaybookSubmit(e){
     e.preventDefault();
     const form = e.target;
-    const email = form.querySelector('input[name=email]').value;
+    const emailInput = form.querySelector('input[name=email]');
+    const email = emailInput.value.trim();
     const name = form.querySelector('input[name=name]').value;
+
+    // Basic shape check
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      showEmailError('Please enter a valid email address.');
+      emailInput.focus();
+      return;
+    }
+
+    // Work email check
+    if(!isWorkEmail(email)){
+      showEmailError('Please use your work email. We can\'t send the playbook to personal addresses like Gmail, Yahoo, or Outlook.');
+      emailInput.focus();
+      return;
+    }
+
+    clearEmailError();
 
     // In production, POST to your email service here (Mailchimp, ConvertKit, Basin, Formspree, etc.)
     // For now: trigger PDF download and log the lead locally.
@@ -503,6 +524,71 @@
     form.hidden = true;
     document.getElementById('playbook-success').hidden = false;
   }
+
+  // Free-email blocklist for the playbook form.
+  const FREE_EMAIL_DOMAINS = new Set([
+    'gmail.com','googlemail.com',
+    'yahoo.com','yahoo.co.in','yahoo.co.uk','yahoo.in','ymail.com','rocketmail.com',
+    'outlook.com','hotmail.com','hotmail.co.in','hotmail.co.uk','hotmail.in','live.com','msn.com',
+    'icloud.com','me.com','mac.com',
+    'aol.com',
+    'protonmail.com','proton.me','pm.me',
+    'mail.com','gmx.com','gmx.net',
+    'yandex.com','yandex.ru',
+    'rediffmail.com','rediff.com',
+    'qq.com','163.com','126.com',
+    'duck.com','tutanota.com','tuta.io','fastmail.com','fastmail.fm',
+    'zohomail.com'
+  ]);
+
+  function isWorkEmail(email){
+    const domain = (email||'').toLowerCase().trim().split('@')[1];
+    return !!domain && !FREE_EMAIL_DOMAINS.has(domain);
+  }
+
+  function showEmailError(msg){
+    const err = document.getElementById('playbook-email-error');
+    const input = document.getElementById('playbook-email');
+    if(!err || !input) return;
+    err.textContent = msg;
+    err.hidden = false;
+    input.classList.add('invalid');
+    input.setAttribute('aria-invalid', 'true');
+  }
+
+  function clearEmailError(){
+    const err = document.getElementById('playbook-email-error');
+    const input = document.getElementById('playbook-email');
+    if(!err || !input) return;
+    err.hidden = true;
+    err.textContent = '';
+    input.classList.remove('invalid');
+    input.removeAttribute('aria-invalid');
+  }
+
+  // Live check on blur; clear as the user corrects.
+  document.addEventListener('DOMContentLoaded', () => {
+    const emailInput = document.getElementById('playbook-email');
+    if(!emailInput) return;
+    emailInput.addEventListener('blur', () => {
+      const v = emailInput.value.trim();
+      if(!v){ clearEmailError(); return; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+        showEmailError('Please enter a valid email address.'); return;
+      }
+      if(!isWorkEmail(v)){
+        showEmailError('Please use your work email. We can\'t send the playbook to personal addresses like Gmail, Yahoo, or Outlook.'); return;
+      }
+      clearEmailError();
+    });
+    emailInput.addEventListener('input', () => {
+      if(!emailInput.classList.contains('invalid')) return;
+      const v = emailInput.value.trim();
+      if(v && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) && isWorkEmail(v)){
+        clearEmailError();
+      }
+    });
+  });
 </script>
 
 </body>
